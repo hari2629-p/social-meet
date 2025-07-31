@@ -1,13 +1,14 @@
 {
-  "name": "social_networkingz_server",
+  "name": "social-meet",
   "version": "1.0.0",
-  "description": "",
+  "description": "A backend API to generate Jitsi Meet video rooms, manage users, and handle room sessions with MySQL and Node.js.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Harigovind P Nair <www.hariatl10@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.3",
@@ -23,11 +24,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hari2629-p/social-network-.git"
+    "url": "https://github.com/hari2629-p/social-meet.git"
   },
-  "keywords": [],
+  "keywords": [
+    "jitsi",
+    "video",
+    "api",
+    "meet",
+    "express",
+    "nodejs",
+    "sequelize",
+    "mysql",
+    "realtime",
+    "backend"
+  ],
   "bugs": {
-    "url": "https://github.com/hari2629-p/social-network-/issues"
+    "url": "https://github.com/hari2629-p/social-meet/issues"
   },
-  "homepage": "https://github.com/hari2629-p/social-network-#readme"
+  "homepage": "https://github.com/hari2629-p/social-meet#readme"
 }
