@@ -20,5 +20,14 @@
     "sequelize": "^6.37.0",
     "socket.io": "^4.7.4",
     "uuid": "^9.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hari2629-p/social-network-.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/hari2629-p/social-network-/issues"
+  },
+  "homepage": "https://github.com/hari2629-p/social-network-#readme"
 }

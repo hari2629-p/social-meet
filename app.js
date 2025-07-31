@@ -1,39 +1,39 @@
+// Load environment variables first
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
-require("dotenv").config();
-const db = require("./configs/db");
 const cors = require("cors");
 const path = require("path");
 
-// Import controllers and routes
-const { createuser } = require("./controllers/user_controller");
-const userRoutes = require("./routes/user_routes");
-const roomRoutes = require("./routes/room_routes");
-const jitsiRoutes = require("./routes/jitsi_routes"); // Add this line
+// Load database after .env is loaded
+const db = require("./configs/db");
+
+// Load route files
+const userRoutes = require("./routes/userRoutes");
+const roomRoutes = require("./routes/roomRoutes");
+// const jitsiRoutes = require("./routes/jitsi_routes"); // Uncomment only if this file exists
 
 // Middleware
-app.use(express.json());  // Add this line to parse JSON requests
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());  // This can be removed if express.json() is used
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes
+// Test Route
 app.get("/", (req, res) => {
-    createuser();
-    res.send("Hello from social networkingz server!");
+  res.send("👋 Welcome to Social Networkingz Backend Server!");
 });
 
-app.use("/v1", userRoutes);
-app.use("/v1", roomRoutes);
-app.use("/v1/jitsi", jitsiRoutes); // Add this line
+// API Routes
+app.use("/api/users", userRoutes);
+app.use("/api/rooms", roomRoutes);
+// app.use("/api/jitsi", jitsiRoutes); // Uncomment if needed
 
-// Server Setup
-const port = process.env.PORT;
-
+// Start server
+const port = process.env.PORT || 3000;
 db.sync({ force: false }).then(() => {
-    app.listen(port, () => {
-        console.log(`Server started on port ${port}`);
-    });
+  app.listen(port, () => {
+    console.log(`✅ Server started on port ${port}`);
+  });
 });

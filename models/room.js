@@ -1,25 +1,24 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../configs/db");
+const { DataTypes } = require("sequelize");
+const db = require("../configs/db");
 
-const room = sequelize.define("Rooms", {
-    email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    room_id: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    status: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-    },
-    is_one_to_one: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-    },
-}, {
-    freezeTableName: true,
+const Room = db.define("Room", {
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  room_id: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: false,
+  },
+  status: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: true,
+  },
+  is_one_to_one: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  },
 });
 
-module.exports = room;
+module.exports = Room;
