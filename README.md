@@ -56,9 +56,7 @@ npm install
 
 3.Configure your environment (.env):
 
-env
-Copy
-Edit
+.env
 PORT=3000
 DB_NAME=social_db
 DB_USER=root
@@ -70,8 +68,8 @@ DB_PORT=3306
 4.Start the server:
 
 bash
-Copy
-Edit
+
+
 node app.js
 
 📡 API Endpoints
