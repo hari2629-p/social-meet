@@ -82,7 +82,7 @@ PATCH	/api/rooms/close/:room_id	Close a room
 
 
 👨‍💻 Maintainer
-Harigovind P Nair
+Harigovind P Nair👈
 
 📧 Email: www.hariatl10@gmail.com
 
